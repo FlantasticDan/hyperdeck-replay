@@ -3,6 +3,7 @@ from flask.templating import render_template
 from flask_socketio import SocketIO
 
 from hyperdeck import Hyperdeck
+from bundle import bundle
 
 a = Hyperdeck('192.168.0.131', 'A')
 b = Hyperdeck('192.168.0.132', 'B')
@@ -39,4 +40,5 @@ def standard_command(payload):
         d.send_granular_command(payload['command'], payload['direction'])
 
 if __name__ == '__main__':
+    bundle(app)
     socketio.run(app, port=5555)
