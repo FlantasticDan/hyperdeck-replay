@@ -101,3 +101,7 @@ button.selector.selected{
 button.selector, .granularity > button.icon{
     transition: background-color 0.5s, border 0.5s, color 0.5s, filter 0.5s;
 }
+
+button.text.global{
+    font-size: 1em;
+}

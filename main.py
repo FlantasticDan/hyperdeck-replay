@@ -9,5 +9,13 @@ socketio = SocketIO(app, cors_allowed_origins='*', async_mode='eventlet')
 def index():
     return render_template('index.html')
 
+@socketio.on('standard-command')
+def standard_command(payload):
+    print(payload)
+
+@socketio.on('granular-command')
+def standard_command(payload):
+    print(payload)
+
 if __name__ == '__main__':
     socketio.run(app, port=5555)
