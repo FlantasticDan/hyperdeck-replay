@@ -1,12 +1,13 @@
 from telnetlib import Telnet
-from eventlet import spawn
+from threading import Thread
 
 class Hyperdeck:
     def __init__(self, ip_address, id) -> None:
         self.deck = Telnet(ip_address, 9993)
         self.id = id
 
-        self.thread = spawn(self.listener)
+        self.thread = Thread(target=self.listener)
+        self.thread.start()
 
     
     def listener(self):
@@ -14,7 +15,6 @@ class Hyperdeck:
             message = self.deck.read_some()
             print(f'//{self.id}//')
             print(message)
-            print()
     
     def identify_standard_command(self, command):
         if command == 'live':
