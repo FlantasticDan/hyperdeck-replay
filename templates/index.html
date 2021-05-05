@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Hyperdeck Replay</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="/static/main.css">
+
+    </head>
+
+    <body>
+
+        <div class="container">
+
+            <button id="live" class="text">LIVE</button>
+            <button id="clip" class="text">CLIP</button>
+            <button id="record" class="icon">
+                <img src="/static/icons/record.svg">
+            </button>
+            <button id="play" class="icon">
+                <img src="/static/icons/play.svg">
+            </button>
+            <button id="stop" class="icon">
+                <img src="/static/icons/stop.svg">
+            </button>
+            <button id="previous" class="icon">
+                <img src="/static/icons/previous.svg">
+            </button>
+            <button id="next" class="icon">
+                <img src="/static/icons/next.svg">
+            </button>
+            <button id="beginning" class="icon">
+                <img src="/static/icons/beginning.svg">
+            </button>
+            <button id="end" class="icon">
+                <img src="/static/icons/end.svg">
+            </button>
+            <div class="granularity container">
+                <button id="backward" class="icon">
+                    <img src="/static/icons/backward.svg">
+                </button>
+                <button id="forward" class="icon selected">
+                    <img src="/static/icons/forward.svg">
+                </button>
+                <div class="four-across">
+                    <button id="10%" class="text">10%</button>
+                    <button id="25%" class="text">25%</button>
+                    <button id="50%" class="text">50%</button>
+                    <button id="75%" class="text">75%</button>
+                </div>
+                <div class="four-across">
+                    <button id="10s" class="text">10s</button>
+                    <button id="5s" class="text">5s</button>
+                    <button id="1s" class="text">1s</button>
+                    <button id="1f" class="text">1f</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="selection container">
+            <button id="a" class="text selector selected">A</button>
+            <button id="c" class="text selector selected">C</button>
+            <button id="b" class="text selector selected">B</button>
+            <button id="d" class="text selector selected">D</button>
+        </div>
+
+        <script src="/static/third-party/socket.io.min.js"></script>
+        <script src="/static/main.js"></script>
+
+    </body>
+
+</html>

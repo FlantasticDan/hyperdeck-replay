@@ -1,0 +1,103 @@
+@import url('/static/fonts.css');
+
+:root{
+    --button-height: 5em;
+    --red: #f22727;
+    --blue: #2782f2;
+}
+
+body{
+    font-family: 'Rubik';
+}
+
+button{
+    border: 5px solid black;
+    background: white;
+    cursor: pointer;
+}
+
+button.icon{
+    height: var(--button-height);
+    padding: 0.5em;
+}
+
+button.text{
+    font-family: 'Rubik';
+    font-weight: 600;
+    font-size: 2em;
+    height: 2em;
+}
+
+button.icon > img{
+    width: 100%;
+    height: 100%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5em;
+    width: 20em;
+    margin: auto;
+    border: 2px solid;
+    padding: 1em;
+}
+
+#stop{
+    grid-column: 1/3;
+}
+
+#live{
+    color: var(--red);
+    border-color: var(--red);
+}
+
+#clip{
+    color: var(--blue);
+    border-color: var(--blue);
+}
+
+.granularity{
+    grid-column: 1/3;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.25em;
+    background-color: var(--blue);
+    border-color: var(--blue);
+
+}
+
+.four-across{
+    grid-column: 1/3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5em;
+}
+
+.four-across > button.text{
+    font-size: 1.5em;
+}
+
+button.icon.selected{
+    background-color: var(--blue);
+    border-color: white;
+}
+
+button.icon.selected > img{
+    filter: invert(1);
+}
+
+.selection{
+    margin-top: 1em;
+}
+
+button.selector.selected{
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: white;
+}
+
+button.selector, .granularity > button.icon{
+    transition: background-color 0.5s, border 0.5s, color 0.5s, filter 0.5s;
+}
