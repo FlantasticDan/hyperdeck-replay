@@ -20,7 +20,7 @@ class Hyperdeck:
         if command == 'live':
             return 'preview: enable: true'
         elif command == 'clip':
-            return 'preview: enable: true\r\nplayrange clear'
+            return 'preview: enable: false\r\nplayrange clear'
         elif command == 'record':
             return 'record'
         elif command == 'play':
