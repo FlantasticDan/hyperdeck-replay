@@ -41,4 +41,4 @@ def standard_command(payload):
 
 if __name__ == '__main__':
     bundle(app)
-    socketio.run(app, port=5555)
+    socketio.run(app,host='0.0.0.0', port=5555)
