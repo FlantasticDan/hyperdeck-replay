@@ -16,13 +16,13 @@ class Hyperdeck:
             print(f'//{self.id}//')
             print(message)
     
-    def identify_standard_command(self, command):
+    def identify_standard_command(self, command, recording=0):
         if command == 'live':
             return 'preview: enable: true'
         elif command == 'clip':
             return 'preview: enable: false\r\nplayrange clear'
         elif command == 'record':
-            return 'record'
+            return f'record: name: {self.id}{recording}'
         elif command == 'play':
             return 'play: single clip: true'
         elif command == 'stop':
@@ -59,8 +59,8 @@ class Hyperdeck:
         elif command == '1f':
             return f'jog: timecode: {sign}00:00:00:01'
     
-    def send_standard_command(self, command):
-        identified_command = self.identify_standard_command(command)
+    def send_standard_command(self, command, recording=0):
+        identified_command = self.identify_standard_command(command, recording)
         query = bytes(f'{identified_command}\r\n', 'ascii')
         self.deck.write(query)
     
